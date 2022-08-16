@@ -100,11 +100,15 @@ Despite accuracy of the training, validation and test precision of the model (~9
 
 ![Confusion Matrix](./graphics/confusion_matrix.png)
 
-Here we can see that when the model makes a mistake, it is more often that it does not pick up a mask where one exists rather than it detecting a mask where one does not exist. The current model is much more stable and reliable than the previous implementation.
+Here we can see that when the model makes a mistake, it is more often that it does not pick up a mask where one exists rather than it detecting a mask where one does not exist. The current model is much more stable and reliable than the previous implementation. Predictions on test data with the old model are shown below:
 
-Although other have built similar models, they seemed to have built it with technologies I am unfamiliar with or they did not give access to how they built their model. Their accuracies were high, but I believe most of it is due to how they performed their feature detection and pre-processing. My implementation does not currently have a method of creating bounding boxes around a detected face before predicting mask status. The image is simply stretched and squished to fit the 224x224 ratio, in which i believe may be causing many of the problems.
+![Old Confusion Matrix](./graphics/old_confusion_matrix.png)
+
+We can tell from this that due to the old model being trained with less diverse images, given a diverse dataset it makes a lot of mistakes. My model improves upon this, but is still not as diverse as desired. More images with changing lighting, mask positioning, and a range of view points will improve the flexibility of this model drastically. 
 
 An other interesting factor when implementing my classification was that when I was using accuracy as my tracking metric, my accuracies would all be ~90%, but the model was unusable for anything outside of the original dataset. It simply always predicted no mask. I am unsure of the cause of this since the training and test dataset are separated before any training occurs so the test dataset should behave like new to the model on prediction. I fear that within the thousands of images, there may be many that are similar in features which is reducing the flexibility of my model. Some research led me to switch to precision and it works, but the switch does not necessarily solve the heart of the issue. I believe increasing sample size and implementing a more proper preprocessing method would prove extremely beneficial for the usage of this model.
+
+Although other have built similar models, they seemed to have built it with technologies I am unfamiliar with or they did not give access to how they built their model. Their accuracies were high, but I believe most of it is due to how they performed their feature detection and pre-processing. My implementation does not currently have a method of creating bounding boxes around a detected face before predicting mask status. The image is simply stretched and squished to fit the 224x224 ratio, which may be causing many of the problems.
 
 # Summary
 
