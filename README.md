@@ -81,13 +81,16 @@ The complete dataset is split as follows:
 - Optimizer: RMSprop (For classification and adjusting learning rate)
 
 # Results
-Although our application is not hosted, you can download it from the [CheckPoint Github Page](https://github.com/dangk4atwit/dangk4atwit.github.io). Usage instructions can be found in that readme. 
+Although our application is not hosted, you can download it from the [CheckPoint Github Page](https://github.com/dangk4atwit/dangk4atwit.github.io). Usage instructions can be found in the [Checkpoint Readme](https://github.com/dangk4atwit/dangk4atwit.github.io/blob/main/README.md). 
+
 - User finds themselves not having their mask verify task completed on their dashboard
   ![no_verify](./graphics/Not_verified.PNG)
+
 - User goes to mask verify screen to verify their mask status
   - User clicks on submit mask verification to submit their current mask status
-  ![no_mask](./graphics/no_mask_detected.PNG)
-  ![has_mask](./graphics/Mask_Detected.PNG)
+![no_mask](./graphics/no_mask_detected.PNG)
+![has_mask](./graphics/Mask_Detected.PNG)
+
 - User submits their mask detected and completes their mask verify task
   ![verified](./graphics/Mask_Completed.PNG)
 
@@ -98,13 +101,13 @@ Despite accuracy of the training, validation and test precision of the model (~9
 ![Confusion Matrix](./graphics/confusion_matrix.png)
 Here we can see that when the model makes a mistake, it is more often that it does not pick up a mask where one exists rather than it detecting a mask where one does not exist. The current model is much more stable and reliable than the previous implementation.
 
-Although other have built similar models, they seemed to have built it with technologies I am unfamiliar with or they did not give access to how they built their model. Their accuracies were high, but I believe most of it is due to how they performed their feature detection and pre-processing. My implementation does not currently have a method of creating bounding boxes around a detected face before predicting mask status.
+Although other have built similar models, they seemed to have built it with technologies I am unfamiliar with or they did not give access to how they built their model. Their accuracies were high, but I believe most of it is due to how they performed their feature detection and pre-processing. My implementation does not currently have a method of creating bounding boxes around a detected face before predicting mask status. The image is simply stretched and squished to fit the 224x224 ratio, in which i believe may be causing many of the problems.
 
 An other interesting factor when implementing my classification was that when I was using accuracy as my tracking metric, my accuracies would all be ~90%, but the model was unusable for anything outside of the original dataset. It simply always predicted no mask. I am unsure of the cause of this since the training and test dataset are separated before any training occurs so the test dataset should behave like new to the model on prediction. I fear that within the thousands of images, there may be many that are similar in features which is reducing the flexibility of my model. Some research led me to switch to precision and it works, but the switch does not necessarily solve the heart of the issue. I believe increasing sample size and implementing a more proper preprocessing method would prove extremely beneficial for the usage of this model.
 
 # Summary
 
-This project deplays a Convolutional Neural Network model to predict if a person is currently wearing a mask. This is used to help enforce mask regulation is any organization or establishment. After much experimentation, precision hovers around 95%. 
+This project displays a convolution neural network model to predict if a person is currently wearing a mask. This is used to help enforce mask regulation is any organization or establishment. After much experimentation, precision hovers around 95%.
 
 This repository only holds the generation of the model and the data. The full application can be found at https://github.com/dangk4atwit/dangk4atwit.github.io. The repository contains usage instructions in the [README.md](https://github.com/dangk4atwit/dangk4atwit.github.io/blob/main/README.md)
 
