@@ -83,7 +83,7 @@ The complete dataset is split as follows:
 # Results
 Although our application is not hosted, you can download it from the [CheckPoint Github Page](https://github.com/dangk4atwit/dangk4atwit.github.io). Usage instructions can be found in that readme. 
 - User finds themselves not having their mask verify task completed on their dashboard
-  ![no_verify](./graphics/Not_verified.png)
+  ![no_verify](./graphics/Not_verified.PNG)
 - User goes to mask verify screen to verify their mask status
   - User clicks on submit mask verification to submit their current mask status
   ![no_mask](./graphics/no_mask_detected.PNG)
