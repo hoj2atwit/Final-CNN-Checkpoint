@@ -108,7 +108,7 @@ This project deplays a Convolutional Neural Network model to predict if a person
 
 This repository only holds the generation of the model and the data. The full application can be found at https://github.com/dangk4atwit/dangk4atwit.github.io. The repository contains usage instructions in the [README.md](https://github.com/dangk4atwit/dangk4atwit.github.io/blob/main/README.md)
 
-# SOURCES
+# Sources
 [Initial Inspiration](https://pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/)
 
 # Contributers
