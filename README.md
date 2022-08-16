@@ -99,6 +99,7 @@ Although our application is not hosted, you can download it from the [CheckPoint
 Despite accuracy of the training, validation and test precision of the model (~95%), in practice and use the model seems to still not be as general as we'd like. During usage, lighting and distance play a significant role in if the user us detected wearing a mask. Compared to the older model, there are a lot less false positive for wearing a mask. This is also reflected below:
 
 ![Confusion Matrix](./graphics/confusion_matrix.png)
+
 Here we can see that when the model makes a mistake, it is more often that it does not pick up a mask where one exists rather than it detecting a mask where one does not exist. The current model is much more stable and reliable than the previous implementation.
 
 Although other have built similar models, they seemed to have built it with technologies I am unfamiliar with or they did not give access to how they built their model. Their accuracies were high, but I believe most of it is due to how they performed their feature detection and pre-processing. My implementation does not currently have a method of creating bounding boxes around a detected face before predicting mask status. The image is simply stretched and squished to fit the 224x224 ratio, in which i believe may be causing many of the problems.
