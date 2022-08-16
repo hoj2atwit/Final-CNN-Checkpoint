@@ -113,7 +113,7 @@ This project displays a convolution neural network model to predict if a person 
 This repository only holds the generation of the model and the data. The full application can be found at https://github.com/dangk4atwit/dangk4atwit.github.io. The repository contains usage instructions in the [README.md](https://github.com/dangk4atwit/dangk4atwit.github.io/blob/main/README.md)
 
 # Sources
-- [Initial Inspiration](https://pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/)
+- [Existing Mask Detection Implementation](https://pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/)
 
 - [Kaggle Dataset](https://www.kaggle.com/datasets/21faa9e463f87c2500de415965f97074cc83502d0f10766fb62a2e1c2bc6b512)
 
